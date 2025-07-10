@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATENDIMENTO PREFERENCIAL E PRIORITÁRIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff6900;
+            text-align: center;
+        }
+
+        .estados-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .estados-item {
+            background: #fff;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .estados-question {
+            background: #ff6900;
+            color: #fff;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .estados-answer {
+            display: none;
+            padding: 15px;
+        }
+
+        .estados-answer img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .seta {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .seta.ativa {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sinalização e Avisos Obrigatórios por Estado</h1>
+
+    <div class="estados-container">
+        <div class="estados-item">
+            <div class="estados-question">São Paulo (SP) <span class="seta">▶</span></div>
+            <div class="estados-answer">
+                <p>Em São Paulo, as lojas devem exibir placas informando sobre o direito do consumidor conforme o
+                    Código de Defesa do Consumidor.</p>
+                <img src="https://cdn.awsli.com.br/2500x2500/1727/1727339/produto/130481760/3f47ffd2c8.jpg"
+                    alt="Placa Direito do Consumidor" style="width: 25rem;">
+            </div>
+        </div>
+
+        <div class="estados-item">
+            <div class="estados-question">Rio de Janeiro (RJ) <span class="seta">▶</span></div>
+            <div class="estados-answer">
+                <p>No Rio de Janeiro, as lojas devem exibir placas informando sobre o direito do consumidor conforme o
+                    Código de Defesa do Consumidor.</p>
+                <img src="https://cdn.awsli.com.br/2500x2500/1727/1727339/produto/130481760/3f47ffd2c8.jpg"
+                    alt="Placa Direito do Consumidor" style="width: 25rem;">
+            </div>
+        </div>
+
+        <div class="estados-item">
+            <div class="estados-question">Minas Gerais (MG) <span class="seta">▶</span></div>
+            <div class="estados-answer">
+                <p>Em Minas Gerais, as lojas devem exibir placas informando sobre o direito do consumidor conforme o
+                    Código de Defesa do Consumidor.</p>
+                <img src="https://cdn.awsli.com.br/2500x2500/1727/1727339/produto/130481760/3f47ffd2c8.jpg"
+                    alt="Placa Direito do Consumidor" style="width: 25rem;">
+            </div>
+        </div>
+
+       
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.estados-question');
+
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const seta = question.querySelector('.seta');
+
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                seta.classList.toggle('ativa', !isOpen);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
